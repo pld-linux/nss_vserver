@@ -17,12 +17,12 @@
  
  passwd.o: passwd.c shared.h ${COMMH}
 -	gcc -c -O2 ${DBG} -o$@ $*.c
-+	$(CC) -c -O2 ${DBG} -o$@ $*.c
++	$(CC) -c ${DBG} -o$@ $*.c
  
  shadow.o: shadow.c shared.h ${COMMH}
 -	gcc -c -O2 ${DBG} -o$@ $*.c
-+	$(CC) -c -O2 ${DBG} -o$@ $*.c
++	$(CC) -c ${DBG} -o$@ $*.c
  
  group.o: group.c ${COMMH}
 -	gcc -c -O2 ${DBG} -o$@ $*.c
-+	$(CC) -c -O2 ${DBG} -o$@ $*.c
++	$(CC) -c ${DBG} -o$@ $*.c
