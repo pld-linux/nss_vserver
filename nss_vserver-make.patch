@@ -1,0 +1,28 @@
+--- nss_vserver/Makefile~	2006-03-19 07:42:24.000000000 +0200
++++ nss_vserver/Makefile	2006-03-29 21:03:54.000000000 +0300
+@@ -3,6 +3,7 @@
+ OBJS=passwd.o shadow.o group.o
+ COMMH=config.h commdef.h commctx.h
+ DBG=-g3
++CC=gcc
+ 
+ all: ${MOD}
+ 
+@@ -33,13 +34,13 @@
+ 	@echo "== Testing finished =="
+ 
+ ${MOD}: ${OBJS}
+-	gcc -shared ${DBG} -o ${MOD} -lpthread -Wl,-soname,${MOD} ${OBJS}
++	$(CC) -shared ${DBG} -o ${MOD} -lpthread -Wl,-soname,${MOD} ${OBJS}
+ 
+ passwd.o: passwd.c shared.h ${COMMH}
+-	gcc -c -O2 ${DBG} -o$@ $*.c
++	$(CC) -c -O2 ${DBG} -o$@ $*.c
+ 
+ shadow.o: shadow.c shared.h ${COMMH}
+-	gcc -c -O2 ${DBG} -o$@ $*.c
++	$(CC) -c -O2 ${DBG} -o$@ $*.c
+ 
+ group.o: group.c ${COMMH}
+-	gcc -c -O2 ${DBG} -o$@ $*.c
++	$(CC) -c -O2 ${DBG} -o$@ $*.c
