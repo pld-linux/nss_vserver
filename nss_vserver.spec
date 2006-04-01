@@ -6,10 +6,11 @@
 # - gid is hardcoded in nss_vserver
 %define	vserver_gid 9999
 Summary:	Vserver Name Service Switch Module
+Summary(pl):	Modu³ NSS Vserver
 Name:		nss_vserver
 Version:	0
 Release:	0.3
-License:	public domain
+License:	Public Domain
 Group:		Base
 Source0:	http://dev.call2ru.com/%{name}.tar.bz2
 # Source0-md5:	c1069fefb23b4bb699b857ea1062d75a
@@ -33,12 +34,25 @@ via host, you should also get a bit modified vslogin (originally
 written by Alec Thomas, <http://swapoff.org/LinuxVServer>) from
 <http://linux-vserver.org/HowtoHostAuth>.
 
+%description -l pl
+To jest modu³ host-auth dla systemów opartych na systemie
+linux-vserver.
+
+Modu³ nss_vserver pozwala uwierzytelniaæ u¿ytkowników z vserwerów na
+ho¶cie poprzez standardowe uwierzytelnianie PAM. Aby u¿ytkownik
+logowa³ siê do swojego vserwera przez host, nale¿y tak¿e u¿yæ nieco
+zmodyfikowanego programu vslogin (oryginalnie napisanego przez Aleca
+Thomasa - <http://swapoff.org/LinuxVServer>) z
+<http://linux-vserver.org/HowtoHostAuth>.
+
 %prep
 %setup -q -n %{name}
 %patch0 -p1
 
 %build
-%{__make} CC="%{__cc}" DBG="%{rpmcflags}"
+%{__make} \
+	CC="%{__cc}" \
+	DBG="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -49,10 +63,10 @@ install libnss_vserver.so.* $RPM_BUILD_ROOT%{_libdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-
 %pre
 %groupadd -g %{vserver_gid} vserver
+
+%post	-p /sbin/ldconfig
 
 %postun
 /sbin/ldconfig
