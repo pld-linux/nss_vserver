@@ -6,7 +6,7 @@
 # - gid is hardcoded in nss_vserver
 %define	vserver_gid 9999
 Summary:	Vserver Name Service Switch Module
-Summary(pl):	Modu≥ NSS Vserver
+Summary(pl.UTF-8):   Modu≈Ç NSS Vserver
 Name:		nss_vserver
 Version:	0
 Release:	0.3
@@ -34,13 +34,13 @@ via host, you should also get a bit modified vslogin (originally
 written by Alec Thomas, <http://swapoff.org/LinuxVServer>) from
 <http://linux-vserver.org/HowtoHostAuth>.
 
-%description -l pl
-To jest modu≥ host-auth dla systemÛw opartych na systemie
+%description -l pl.UTF-8
+To jest modu≈Ç host-auth dla system√≥w opartych na systemie
 linux-vserver.
 
-Modu≥ nss_vserver pozwala uwierzytelniaÊ uøytkownikÛw z vserwerÛw na
-ho∂cie poprzez standardowe uwierzytelnianie PAM. Aby uøytkownik
-logowa≥ siÍ do swojego vserwera przez host, naleøy takøe uøyÊ nieco
+Modu≈Ç nss_vserver pozwala uwierzytelniaƒá u≈ºytkownik√≥w z vserwer√≥w na
+ho≈õcie poprzez standardowe uwierzytelnianie PAM. Aby u≈ºytkownik
+logowa≈Ç siƒô do swojego vserwera przez host, nale≈ºy tak≈ºe u≈ºyƒá nieco
 zmodyfikowanego programu vslogin (oryginalnie napisanego przez Aleca
 Thomasa - <http://swapoff.org/LinuxVServer>) z
 <http://linux-vserver.org/HowtoHostAuth>.
