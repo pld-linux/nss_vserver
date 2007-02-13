@@ -6,7 +6,7 @@
 # - gid is hardcoded in nss_vserver
 %define	vserver_gid 9999
 Summary:	Vserver Name Service Switch Module
-Summary(pl.UTF-8):   Moduł NSS Vserver
+Summary(pl.UTF-8):	Moduł NSS Vserver
 Name:		nss_vserver
 Version:	0
 Release:	0.3
