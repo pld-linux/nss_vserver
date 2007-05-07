@@ -52,7 +52,7 @@ Thomasa - <http://swapoff.org/LinuxVServer>) z
 %build
 %{__make} \
 	CC="%{__cc}" \
-	DBG="%{rpmcflags}"
+	DBG="%{rpmcflags} -fPIC"
 
 %install
 rm -rf $RPM_BUILD_ROOT
